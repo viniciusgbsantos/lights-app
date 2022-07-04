@@ -1,0 +1,58 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+    
+#root {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato",sans-serif;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.room {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.room.dark { 
+    background: #0F2027;
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+}
+
+.room.light { 
+    background: #FFEFBA;
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+}
+
+.room button { 
+    width: 360px;
+    height: 120px;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    transition: .5s;
+    font-size: 38px;
+    border-radius: 5px;
+}
+
+.room.light button { 
+    border: solid 3px #000; color: #000; 
+    box-shadow: 0 0 0.2em rgb(119, 117, 117);
+}
+.room.dark button {  
+    border: solid 3px #fff; color: #fff; 
+    box-shadow: 0 0 0.2em #ccc;
+}

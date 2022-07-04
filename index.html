@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interruptor - Lights App</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    class Lights extends React.Component{
+      constructor(props){
+        super(props);
+        this.state = {isOn: true};
+      }
+
+      toggle = () => {
+        this.setState(state => ({
+          isOn: !state.isOn
+        }));
+      }
+
+      render(){
+        const { isOn } = this.state;
+        const roomClass = (isOn) ? 'light' : 'dark';
+
+        return(
+          <div className={`room ${roomClass}`}>
+            <button onClick={this.toggle}>
+              {this.state.isOn ? 'Turn OFF' : 'Turn On'}
+            </button>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<Lights />, document.getElementById('root'));
+  </script>
+</body>
+</html>
